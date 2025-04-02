@@ -5,7 +5,10 @@ import requests
 import os
 
 # Load Image
-image = Image.open(r'C:\Users\shiva\OneDrive\Desktop\Currency Converter\Logo.jpeg')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+image_path = os.path.join(script_dir, "Logo.jpeg")
+
+image = Image.open(image_path)
 
 st.image(image, width=500)
 
@@ -55,5 +58,6 @@ st.write(df)
 # About Section
 with st.expander("About"):
     st.write("This app uses real-time exchange rates to convert currencies.")
+
 
 
